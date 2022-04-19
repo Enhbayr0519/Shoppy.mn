@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+body{
+    width: 100%;
+    height: 100%;
+    /* background-image: url(https://media.istockphoto.com/photos/online-electronics-shopping-picture-id466268929?b=1&k=20&m=466268929&s=170667a&w=0&h=L2mMHcqLDet3oSrB6ZKFIqJB7cjpMkNwMif8VADP5tU=); */
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.header_section{
+    text-align: center;
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.521);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.header_section h1 i{
+    margin-left: 10px;
+}
+
+.header_menu{
+    width: 800px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub_menu{
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    padding: 9px;
+    font-family: Alice, sans-serif;
+    font-size: 20px;
+    border-bottom: 1px solid #1a181863;
+    color: rgba(43, 36, 36, 0.719);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: initial;
+    transition: .3s ease-in-out;
+}
+
+.sub_menu:hover{
+    font-size: 22px;
+    color: rgb(189, 189, 21);
+}
+
+
+.login{
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    right: 10rem;
+    top: 4rem;
+}
+
+.login_child{
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 50px repeat(2, 120px);
+    grid-template-rows: 50px;
+}
+
+.newtreh{
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgb(199, 196, 37);
+    text-align: center;
+    padding: .5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    color: rgba(116, 114, 114, 0.849);
+}
+.newtreh:hover{
+    background-color: rgba(204, 204, 204, 0.521);
+    color: rgba(0, 0, 0, 0.76);
+}
+
+.burtguuleh{
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgb(199, 196, 37);
+    text-align: center;
+    padding: .5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    color: rgba(116, 114, 114, 0.849);
+}
+.burtguuleh:hover{
+    background-color: rgba(204, 204, 204, 0.521);
+    color: rgba(0, 0, 0, 0.76);
+}
+
+.cart i{
+    font-size: 25px;
+    color: rgba(108, 93, 93, 0.757);
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.cart i:hover {
+    font-size: 27px;
+    color: rgba(108, 93, 93, 0.958);
+}

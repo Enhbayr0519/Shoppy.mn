@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+body{
+    width: 100%;
+    height: 100%;
+    /* background-image: url(https://media.istockphoto.com/photos/online-electronics-shopping-picture-id466268929?b=1&k=20&m=466268929&s=170667a&w=0&h=L2mMHcqLDet3oSrB6ZKFIqJB7cjpMkNwMif8VADP5tU=); */
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    transition: all .3s ease-in-out;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.header_section{
+    text-align: center;
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.521);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.header_section h1 i{
+    margin-left: 10px;
+}
+
+.header_menu{
+    width: 800px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub_menu{
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    padding: 9px;
+    font-family: Alice, sans-serif;
+    font-size: 20px;
+    border-bottom: 1px solid #1a181863;
+    color: rgba(43, 36, 36, 0.719);
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: initial;
+    transition: .3s ease-in-out;
+}
+
+.sub_menu:hover{
+    font-size: 22px;
+    color: rgb(189, 189, 21);
+}
+
+
+.login{
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    right: 10rem;
+    top: 4rem;
+}
+
+.login_child{
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: 50px repeat(2, 120px);
+    grid-template-rows: 50px;
+}
+
+.newtreh{
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgb(199, 196, 37);
+    text-align: center;
+    padding: .5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    color: rgba(116, 114, 114, 0.849);
+}
+.newtreh:hover{
+    background-color: rgba(204, 204, 204, 0.521);
+    color: rgba(0, 0, 0, 0.76);
+}
+
+.burtguuleh{
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgb(199, 196, 37);
+    text-align: center;
+    padding: .5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    color: rgba(116, 114, 114, 0.849);
+}
+.burtguuleh:hover{
+    background-color: rgba(204, 204, 204, 0.521);
+    color: rgba(0, 0, 0, 0.76);
+}
+
+.cart i{
+    font-size: 25px;
+    color: rgba(108, 93, 93, 0.757);
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.cart i:hover {
+    font-size: 27px;
+    color: rgba(108, 93, 93, 0.958);
+}
+
+.header_contents{
+    width: 1500px;
+    height: 800px;
+    margin-top: 3rem;
+}
+
+.contents{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content_section{
+    display: flex;
+    gap: 30rem;
+    margin-top: 3rem;
+    color: rgba(0, 0, 0, 0.624);
+}
+
+.content_section h2{
+    cursor: pointer;
+    transition: .2s  ease-in-out;
+}
+
+.content_section h2:hover{
+    color: rgba(184, 184, 39, 0.542);
+    font-size: 20px;
+}
+
+.products{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 250px 1000px;
+    grid-template-rows: 675px;
+    margin-top: 3rem;
+}
+
+.contain_product{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.68);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contain_product h2{
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.contain_product h2:hover{
+    color: rgb(189, 189, 21);
+    font-size: 27px;
+}
+
+.contain_product2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contain_product2_child{
+    display: grid;
+    gap: 3rem;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 300px);
+}
+
+.contain_product2_child_child{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contain_product2_child_child:nth-child(1){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-image: url(https://cdn3.shoppy.mn/spree/images/1291169/product/open-uri20220405-789114-136hogh.);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.contain_product2_child_child:nth-child(2){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-image: url(https://cdn3.shoppy.mn/spree/images/1185340/product/open-uri20211222-2460335-2qh4ca.);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.contain_product2_child_child:nth-child(3){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-image: url(https://cdn3.shoppy.mn/spree/images/1278461/product/open-uri20220323-3997322-1htaqyi.);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.contain_product2_child_child:nth-child(4){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-image: url(https://cdn3.shoppy.mn/spree/images/1214499/product/open-uri20220201-140971-1ucvn4f.);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.contain_product2_child_child:nth-child(5){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-image: url(https://cdn3.shoppy.mn/spree/images/1278574/product/open-uri20220323-3997318-h9lol7.);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.contain_product2_child_child:nth-child(6){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-image: url(https://cdn3.shoppy.mn/spree/images/1278216/product/open-uri20220323-3997323-vv9h1g.);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.une{
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.219);
+    color: white;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.une:hover{
+    opacity: 1;
+}
+
+.une h4{
+    color: rgba(255, 255, 255, 0.836);
+    font-size: 20px;
+}
+
+.une h4:nth-child(2){
+    color: rgb(228, 228, 24);
+    transition: all .2s ease-in-out;
+}
+.une h4:nth-child(2):hover{
+    font-size: 22px;
+}
