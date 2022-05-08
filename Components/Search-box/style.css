@@ -1,0 +1,9 @@
+.search-box{
+    position: absolute;
+    right: 20rem;
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border: none;
+    border: 1px solid gray;
+}
