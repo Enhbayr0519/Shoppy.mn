@@ -1,0 +1,145 @@
+		MySQL command types
+	DDL-(DataDefinitionLanguage) -> Өгөгдлийн тодорхойлолтын хэл
+	1. CREATE
+	2. DROP
+	3. ALTER
+
+
+	DQL-(DataQueryLanguage) -> Өгөгдлийн хайлтын хэл
+	1. SELECT
+
+	DML-(DataManipulationLanguage) -> Өгөгдөл боловсруулах хэл
+	1. INSERT	
+	2. DELETE
+	3. UPDATE
+	
+	DCL-(DataControlLanguage) -> Өгөгдлийн хяналтын хэл
+	1. CRANT
+	2. REVOKE
+
+	TCL-(TransactionControlLanguage) -> Гүйлгээний хяналтын хэл
+	1. COMMIT 
+	2. RELLBACK
+	3. SAVEPOINT
+
+		SQL Statement/Query
+	1. Select customer data
+	SELECT first_name, last_name
+	FROM cutomers
+	WHERE country = 'Italy'
+	AND score < 500
+
+		SQL - Logical operators
+	AND, OR, NOT, IN, BETWEEN, LIKE
+
+			SQL-Task
+
+		* iin orond awah gj bga ogogdoo selectlj bln.
+	SELECT first_name, country FROM customers
+
+		DISTINCT - Ялгаатай buyu olon hereglegchdiin yamr negen medeelliig dawharduulahgui songj awah
+	SELECT DISTINCT country FROM customers
+
+		ASK - ymr negen ogogdliin ogogdluudiig bagaas ni ih ruu bairluulah (useg, too)
+	SELECT * FROM customers ORDER BY score ASC
+
+ 		DESC- ymr negen ogogdliin ogogdluudiig ihees ni baga ruu bairluulah (useg, too)
+	SELECT * FROM customers ORDER BY score DESC
+
+		1 ees 5 hurtel jagsaana
+	SELECT * FROM customers ORDER BY 1 ASC, 5 DESC
+
+		Zowhon German ulsiig songoh	
+	SELECT * FROM customers WHERE country = "Germany"
+
+		Find all non-german customers
+	SELECT * FROM customers WHERE country != "Germany"
+
+		SQL-Operators
+	SELECT * FROM customers WHERE score > 50
+	SELECT * FROM customers WHERE score < 500
+	SELECT * FROM customers WHERE score >= 500
+	SELECT * FROM customers WHERE score <= 500
+	SELECT * FROM customers WHERE score != 500
+
+		SQL-Logical operators
+	AND - hoyulaa unen bwl true ugu bol false
+
+	OR - ali negni zaaj ogson utgatain tencuu bwl zwhn uneniig butsana
+
+		NOT - esrg utgiig ni awna 
+	SELECT * FROM customers WHERE NOT score <= 400
+
+		BETWEEN - Zaaj ogson hemjeen dotrh utgiig butsaana
+	SELECT * FROM customers WHERE score BETWEEN 100 AND 500
+
+		IN - Herwee zaaj ogson utga ni olon toonii utguudad bwl tedgeer utguudiig butsaana
+	SELECT * FROM customers WHERE customer_id IN (1,2,5)
+ 
+		LIKE 'M%' - Herwee zaaj ogson utga ni hamgiin ehend ni bwl butsaana.
+	SELECT * FROM customers WHERE first_name LIKE 'M%'
+
+		LIKE '%n' - Herwee zaaj ogson utga ni hamgiin suuld ni bwl butsaana.
+	SELECT * FROM customers WHERE first_name LIKE '%n'
+
+		LIKE '%r%' - Herwee zaaj ogson utga ni ter dotr ni baih l ym bol butsaana.
+	SELECT * FROM customers WHERE first_name LIKE '%r%'
+
+		Like '__%r' - Herwee tuhain textiin 3dh useg ni r baiwl busaana. ( _ -> 1 usegiig(too) ilerhiilne )
+	SELECT * FROM customers WHERE first_name LIKE '__r%'
+
+		AS - tuhain zaaj ogson utgiig oorchilno. Replace hiine.
+	SELECT
+	first_name AS per_first_name,
+	last_name AS per_last_name,
+	country AS per_country
+	FROM customers
+	UNION ALL
+	SELECT first_name, last_name, emp_country
+	FROM employees
+
+			SQL-JOIN Type
+		1. INNER Join - tuhain zaaj ogson zuil ter ogogdol dotorni baiwl butsaana.
+	SELECT c.customer_id, c.first_name, o.order_id, o.quantity
+	FROM customers AS c
+	INNER JOIN orders AS o
+	ON c.customer_id = o.customer_id
+
+		2. LEFT Join - inner jointoi adilhan
+
+		3. RIGTH Join - tani shalgah gj byu ogogdoliin id tanihtai tarj baiwal butsaana
+
+		4. FULL Join - buh ogogdoliig shalganaa baiga bol butsana
+
+		UNION - Buh zaaj ogson utguudiig hamgiin ehnd zaasn utgnd bugdiig ni negtgene niiluulne
+	SELECT first_name, last_name, country FROM customers
+	UNION ALL
+	SELECT first_name, last_name, emp_country FROM employees
+
+
+		SUM() - Niilber
+	SELECT SUM(quantity) FROM orders
+	
+		NUM() -
+	SELECT COUNT(*) AS total_customers FROM customers
+
+		AVG() - Дундаж
+	SELECT AVG(score) FROM customers
+
+		MAX() - Hamgiin ih toog oloh
+	SELECT MAX(score) FROM customers
+
+		MIN() - Hamgiin baga toog oloh
+	SELECT MIN(score) FROM customers
+		
+		Hamgiin baga bolon ih on sariig oloh
+	SELECT MIN(order_date) AS min_order_date FROM orders
+	SELECT MAX(order_date) AS min_order_date FROM orders
+
+		Total costumers
+	SELECT 
+	COUNT(*) AS total_customers, 
+	country
+	FROM customers
+	GROUP BY country 
+	ORDER BY COUNT(*) ASC
