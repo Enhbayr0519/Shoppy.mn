@@ -1,0 +1,30 @@
+
+
+.trailer_item1 {
+    background-color: #22e4ac;
+}
+
+.trailer_item2 {
+    background-color: #ffbf2e;
+}
+
+.trailer_item3 {
+    background-color: #9969c7;
+}
+
+.trailer_item4 {
+    background-color: #d70d9a;
+}
+
+@media (max-width: 1536px) {
+    .trailer_item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 820px) {
+    .trailer_item {
+        width: 100%;
+    }
+}
+
