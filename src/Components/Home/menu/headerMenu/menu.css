@@ -1,0 +1,28 @@
+#menu {
+    font-size: 12px;
+}
+
+@media(min-width: 810px) {
+    #menu {
+        font-size: 13px;
+    }
+}
+
+@media(min-width: 885px) {
+    #menu {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
+
+@media(min-width: 1123px) {
+    #menu {
+        font-size: 15px;
+    }
+}
+
+@media(min-width: 1620px) {
+    #menu {
+        font-size: 17px;
+    }
+}
