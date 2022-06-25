@@ -1,0 +1,41 @@
+.bg {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: 1%;
+    left: 4.5%;
+    background: url('../../../images/home/header/background\ 1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media(max-width: 1280px) {
+    .bg {
+        height: 90%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .bg {
+        height: 80%;
+        left: 0;
+    }
+}
+
+@media(max-width: 768) {
+    .bg {
+        height: 70%;
+    }
+}
+
+@media(max-width: 640px) {
+    .bg {
+        height: 50%;
+    }
+}
+
+@media(max-width: 450px) {
+    .bg {
+        height: 40%;
+    }
+}
