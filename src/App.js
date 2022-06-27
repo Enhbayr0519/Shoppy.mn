@@ -1,25 +1,13 @@
-import React, { Component } from 'react';
-import "./App.css"
-import Content from './Components/Content';
-import Footer from './Components/Footer';
-import Header from './Components/Header';
-import Login from './Register&Login/login/login';
-import Resgister from './Register&Login/register/register';
+import './App.css';
+import MyRedux from './MyRedux';
 
-class App extends Component {
-    render() {
-        return (
-            <div className='App'>
-                <Header />
-                <Content />
-                <Footer />
-
-                {/* Registration */}
-                <Resgister />
-                <Login />
-            </div>
-        )
-    }
+function App() {
+  return (
+    <div className="App">
+      <h1>Redux</h1>
+      <MyRedux />
+    </div>
+  );
 }
 
 export default App;
