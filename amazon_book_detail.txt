@@ -1,0 +1,44 @@
+1. Suulgah items
+    npm i express dotenv --save
+    npm i nodemon --save--dev
+
+    package.json: 
+        "scripts": {
+            "start": "NODE_ENV=production node server",
+            "dev": "nodemon server"
+        }
+
+Ymr negen url iin araas nemlteer bichij ogsn zamiig param buyu parameter gene.
+Ter param iig express maani automataar req.params dotor oruulj ogdog bgaa.
+Jishee: url ='/api/categories/:id' => req.params.id
+
+2. Routes
+    router bolon busad file uuda express d holbohdoo use('etseg url...', file) middleware iig ashiglana.\
+
+    3. Middleware ba tuunii url keys
+        console.log(`${req.method}${req.protocol}://${req.host}${req.originalUrl}`)
+            middleware buyu logger hiij bga tohioldold 3 request irne => (req, res, next)
+        middleware uud hoorndoo req aar ogodol damjuulj boldog.
+        jisheeni: req.userId = "Enhbayr";  req.userId
+            Zaawal ogoh gj bgaa middleware aa awah gj bgaa middleware iihaa deer ni bicne
+        __dirname odo herglj bga project ymr zam der baigag harulna
+
+4. import
+module.export = ...;
+
+    5. rfs = rotate-file-stream
+        Shine ursgal uusgeh => createStream()
+    
+6. Mongoose ODM - obektiin ogogdliin zuraglal
+MongoDB Express hoyriin hoorond bdg tuslah hoorndhoh ogodgliig tataj awcrah holbox oorchloh ustgah uildiig hiij ogdog.
+Tuhain zaaj ogson obektiig uusgedeg bogod tuun deerh punkcuudiig duudhar shud ogogdlin san der ajildg.
+MongoDB deer ajilj baiga collection bolgond ooriin gesen modeliig uusgej ogdog.
+
+7. Mongoose
+    Tuhain textiig unique: true ogsnor dawhardahgui.
+    Hoosn zaig trim: true ogsnoor ustgana
+
+8. Server iin req dotr irsn ogogdliig req.body dotor huleej awhdaa daraah express iin body parser buyu json() iig duudaj ogoh ystoi
+    syntax: server.use(express.json());
+
+9. 
