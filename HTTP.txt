@@ -1,0 +1,65 @@
+		
+		    ***API***
+
+    		*REQUEST-message*
+	{
+   		GET/index.html
+   		Content-type: text/html
+	}
+
+   	GET : Server ees ogogdliig awna.
+   	POST : Servert ogogdliig ilgeene.
+   	PUT : Server deer baigaa ogogdliig ( replace ) hiij oorchilno solino.
+   	PATCH : Server deer baigaa ogogdliin todorhoi hesgiig ni oorchilno.
+	DELETE : Server deerees ogodol ustgana.
+
+		*Header REQUEST*              *Header RESPONSE*
+	1. Authorization		1. Content-type
+	2. User-agent			2. Content-length
+	3. Reffer			3. Set-cookies
+	4. Accert			4. Date
+	5. Content-type			5. Server
+	6. Content-length		6. ...
+	7. Cookies
+	8. ...
+
+		*HTTP status code iin tailbar*
+	1xx : Huseltiiig huleej awlaa.
+	2xx : Amjilttai bolloo.
+	3xx : Redirect hiih utga.
+	4xx : Klient buyu buruu medeelel damjuulah taliin aldaa.
+	5xx : Server taliin aldaa.
+
+	200 - OK
+	201 - OK Hadgalchixlaa
+	301 - URL ni oorchlogdson baina
+	304 - Kontent oorchlogdoogui hewendee baina
+	400 - Tanii huseltiig bi oilgohgui baina
+	401 - Ta ehleed login hiine uu
+	404 - NOT FOUND tani hussen zuil end alga baina
+	500 - Serveriin kod buruu ajillasan tohioldold
+
+
+		*Node*
+	Shine file uusgeh : {
+	const fs = require('fs');
+	const request = require("request");
+	request('https://nodejs.org/dist/latest-v16.x/docs/api/https.json', (error, respone, body) => {
+    	fs.writeFileSync("./cluster.json", body);
+	});
+
+		*NodeMon*
+	1. npm i nodemon --save server lu ilgeegdene.
+	2. npm i nodemon --save-dev hogjuulelt hiih uyd ajilna.
+	3. npm init -y package.json tatah
+
+		*fs*
+	file iin talaar medeellig ogdog.
+	fs.readFile(url..., (error, data) => {});
+
+		*on('data', () => {})* togsgoliig ni zaaj ogoh ystoi *on('end', () => {})*
+	event ireh bolgond ajildag key.
+	jishee : req.on('data', (chunk) => {})  data ireh bolgon tus burd ni callback func iig ajiluulna.
+
+		*Buffer*
+	Buffer.concat ogogdluudiig niiluuleed neg ogogdol bolgj hadgalna.
