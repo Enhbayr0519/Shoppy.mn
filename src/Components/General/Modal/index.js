@@ -7,6 +7,7 @@ const Modal = props => (
         <Shadow show={props.show} closeComfirmModal={props.closeComfirmModal}/>
         <div 
             style={{ 
+                fontSize: "20px",
                 transform: props.show ? "translateY(0)" : "translateY(-100vh)", 
                 opacity: props.show ? "1" : "0"
             }}

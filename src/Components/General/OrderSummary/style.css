@@ -16,7 +16,6 @@
     height: 23px;
     padding: 5px;
     /* text-align: center; */
-    border-radius: 50%;
     font-size: 25px;
     position: relative;
     display: flex;
@@ -32,12 +31,10 @@
 
 .refuse {
     color: rgb(255, 0, 0);
-    border: 1px solid rgba(223, 0, 0, 0.51);
     cursor: pointer;
 }
 
 .continue {
     color: rgb(74, 181, 3);
-    border: 1px solid rgba(60, 171, 0, 0.51);
     cursor: pointer;
 }

@@ -1,8 +1,11 @@
+import axios from "../../Axios";
 import React, { Component } from "react";
 import BuildControls from "../../Components/BuildControls";
 import Burger from "../../Components/Burger";
 import Modal from "../../Components/General/Modal";
 import OrderSummary from "../../Components/General/OrderSummary";
+import Spinner from "../../Components/General/Spinner";
+import OrderPage from "../OrderPage";
 
 const INGREDIENT_PRICES = {salad: 150, cheese: 250, bacon: 800, meat: 1500};
 const INGREDIENT_NAMES = {
@@ -24,8 +27,8 @@ class BurgerPage extends Component {
 
         totalPrice: 1000,
         purchasing: false,
-        comfirmOrder: false
-
+        comfirmOrder: false,
+        loading: false
     };
 
     showComfirmModal = () => {
@@ -36,12 +39,41 @@ class BurgerPage extends Component {
         this.setState({comfirmOrder: false});
     }
 
+    componentDidMount = () => {
+        this.setState({loading: true});
+        axios.get("/orders.json").then(response => {
+          let arr = Object.entries(response.data);
+          arr = arr.reverse();
+          arr.forEach(el => {
+            console.log(el[1].name + " ==> " + el[1].dun);
+          });
+        }).catch(err => console.log(err))
+            .finally(() => {
+                this.setState({loading: false})
+            })
+    };
+    
     continueOrder = () => {
-        console.log('drgdla');
-    }
+        const order = {
+            orts: this.state.ingredients,
+            dun: this.state.totalPrice,
+            name: "Enhbayr",
+            hayag: {
+            city: "Ulaanbaatar",
+            street: "Baynhoshuu"
+            }
+        };
+
+        this.setState({loading: true})
+        axios.post("/orders.json", order).then(response => {
+
+        }) .finally(() => {
+            this.setState({loading: false})
+        })
+    };
 
     ortsNemeh = (type) => {
-        console.log("==> : ", type);
+        // console.log("==> : ", type);
         const newIngredients = {...this.state.ingredients};
         newIngredients[type]++;
 
@@ -55,7 +87,7 @@ class BurgerPage extends Component {
     }
 
     ortsHasah = (type) => {
-        console.log("==> : ", type);
+        // console.log("==> : ", type);
         const newIngredients = {...this.state.ingredients};
         newIngredients[type]--;
 
@@ -75,13 +107,20 @@ class BurgerPage extends Component {
         return (
             <div>
                 <Modal closeComfirmModal={this.closeComfirmModal} show={this.state.comfirmOrder}>
-                    <OrderSummary 
-                        onCancel={this.closeComfirmModal}
-                        onContinue={this.continueOrder}
-                        price={this.state.totalPrice}
-                        ingredientsNames={INGREDIENT_NAMES}
-                        ingredients={this.state.ingredients}/>
+
+                    {this.state.loading ? <Spinner /> : (
+                        <OrderSummary 
+                            onCancel={this.closeComfirmModal}
+                            onContinue={this.continueOrder}
+                            price={this.state.totalPrice}
+                            ingredientsNames={INGREDIENT_NAMES}
+                            ingredients={this.state.ingredients}
+                        />
+                    )}
                 </Modal>
+
+                {this.state.loading ? <Spinner /> : null}
+                
                 <Burger orts={this.state.ingredients} />
                 <BuildControls 
                     showComfirmModal={this.showComfirmModal}
@@ -92,6 +131,8 @@ class BurgerPage extends Component {
                     ortsNemeh={this.ortsNemeh} 
                     ortsHasah={this.ortsHasah}
                 />
+                {/* <Zahialga orts={this.state.ingredients} ner={this.state.INGREDIENT_NAMES}/> */}
+                <OrderPage />
             </div>
         )
     }

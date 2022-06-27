@@ -19,11 +19,11 @@ const OrderSummary = props => {
             <div className="check">
 
                 <div onClick={props.onCancel} className="check_btn refuse">
-                    <i className="fa-solid fa-xmark"></i>
+                    Үгүй
                 </div>
 
                 <div onClick={props.onContinue} className="check_btn continue">
-                    <i className="fa-solid fa-check"></i>
+                    Тийм
                 </div>
 
             </div>
